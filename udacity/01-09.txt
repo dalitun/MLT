@@ -1,0 +1,20 @@
+What is porfolio optimization?
+  Given a set of assets and a time period, find an allocation of funds to 
+assets that miximizes performance.
+
+What is performance?
+  We could choose from a number of metrics, including cumulative return,
+volatility or risk, and risk adjusted return (Sharpe Ratio).
+
+E.g cumulative return is the most trivial measure to use - simply investing all your money in the stock with maximum return (and none in others) would be your optimal portfolio, in this case. Hence, it is the easiest to solve for. But probably not the best for risk mitigation.
+
+
+Framing the problem (optimise for Sharpe Ratio):
+  minimise f(X) = SR * -1 (we want to maximise the SR)
+  where X is the allocation vector eg [.1, .4., .4, .1]
+  
+  ranges: limits on values
+    0 <= X <= 1
+  
+  constraints: properties of X that must be 'true'
+    X.sum() = 1.0

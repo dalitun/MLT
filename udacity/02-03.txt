@@ -1,0 +1,19 @@
+What a company is worth?
+  INTRINSIC VALUE
+    is based on future dividends. In other words, companies pay a certain amount
+to their investors every year based on how many shares they own. And this is the
+value of all future dividends going into the future.
+    Future Value / Discount Rate
+    = Total dividends per year / DR
+
+  BOOK VALUE
+    is the value of the company is we split it up into pieces and sold those
+individual pieces.
+    Total assets (ignoring intangible assets) minus liabilities
+
+  MARKET CAPITALIZATON
+    is the value the market is placing on the company.
+    No shares * price
+    
+
+Many stock trading strategies look for deviations between intrinsic value and market cap.

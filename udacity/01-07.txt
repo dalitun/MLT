@@ -1,0 +1,71 @@
+Daily Portfolio Value
+Given:
+  start_val = 1000000
+  start_date = 2009-01-01
+  end-date = 2011-12-31
+  symbols = ['SPY', 'XOM', 'GOOG', 'GLD']
+  allocs = [0.4, 0.4, 0.1, 0.1]
+  
+Pseude-algo:
+  start with prices df
+  normed = prices/prices[0]
+  alloced = normed*allocs
+  pos_vals = alloced*start_val  # position values
+  port_val = pos_vals.sum(axis=1)
+
+
+Portfolio Statistics
+daily_rets = daily_rets[1:]  # ignore 0
+
+4 key statistins:
+1) cum_ret = (port_val[-1]/port_val[0])-1  # port_val == portfolio value
+2) avg_daily_ret = daily_rets.mean()
+3) std_daily_ret = daily_rets.std()  # volatility
+4) sharpe_ratio
+
+
+SHARPE RATIO: risk adjusted return
+All else being equal:
+- lower risk is better
+- higher return is better
+SR also considers risk free rate of return
+
+Rp - portfolio return
+Rf - risk free rate of return (return rate on a savings account in a bank)
+sigma_p - std dev of portfolio return
+
+The form of Sharpe Ratio: (Rp - Rf) / sigma_p
+
+The value of a portfolio is directly proportional to the return
+it generates over some baseline (here risk-free rate), and inversely
+proportional to its volatility.
+
+SR = mean(daily_rets - daily_rf) / std(daily_rets)
+
+Note:
+a) mean is the expected value
+b) std(daily_rets - daily_rf) == std(daily_rets) since daily_rf is a const
+c) daily_rf == risk free rate
+   - LIBOR
+   - interest rate on 3 month T-bill
+   - 0% (value that's commonly been used in the past few years) - good approximation
+   
+   to convert annual risk free rate into daily rate
+   e.g. annual rate 10% or 0.1
+   then daily_rf = (1 + 0.1)**(1/252) - 1
+   
+   
+SR can vary widely depending on how frequenty you sample (e.g. you sample prices
+every year/month/week/day)
+Original version of SR is that it's an annual measure, therefore if we sample
+at frequencies other than annual we need to add an adjusment factor
+SR_annualized = k * SR
+where k = sqrt(no samples per year)
+  - daily k sqrt(252)
+  - weekly k sqrt(52)
+  - monthly k sqrt(12)
+  
+Finally the SR = sqrt(252) * mean(daily_rets - daily_rf) / std(daily_rets)
+
+WARNING: use daily_rets.std() or np.std(daily_rets, ddof=1)
+Pandas uses the unbiased estimator (N-1 in the denominator), whereas Numpy by default does not. See http://stackoverflow.com/questions/24984178/different-std-in-pandas-vs-numpy

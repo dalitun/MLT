@@ -1,0 +1,6 @@
+Interview with Tammer Kamel
+
+Build strategy that is:
+1) Theoretically sound
+2) Empirically testable
+3) Simple

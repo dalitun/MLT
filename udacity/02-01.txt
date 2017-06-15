@@ -1,0 +1,27 @@
+Market capitalization for a stock: # shares outstanding * price
+
+ETFs have 4 or 3 letters
+Mutual Funds usually have 5 letters
+Hedge Funds don't have abbreviations
+
+AUM - Assets Under Management - is the total amount of money being managed by the fund.
+
+How fund managers are rewarded:
+Expense ratio
+  is typically a percentage of AUM, therefore higher the AUM value, greater the incentive.
+Two & Twenty
+  This structure actually motivates both AUM accumulation ("Two") as well as
+Profits ("Twenty"). Here "Risk taking" is synonymous with aiming for greater
+profits, which is motivated by the Two & Twenty model.
+
+
+Hedge fund goals:
+  - beat a benchmark* (portfolio may go down with the market)
+  - absolute return (+ve returns no matter what; long/short positions)
+Metrics:
+  - cumulative return
+  - volatility (std)
+  - risk/reward (Sharpe Ratio)
+  
+*select benchmark that represent the type of your investment. E.g. if you invest
+in European stocks, use European stock index as the benchmark, not SPY.

@@ -1,0 +1,8 @@
+Order: BUY,IBM,100,LIMIT,99.95  # BUY/SELL,stock,no shares,MARKET/LIMIT,price
+* LIMIT is the max price you are willing to pay
+
+then in the order book this will appear as (given this is the first order):
+BID 99.95 100
+
+SELL order will be reflected as ASK in the order book.
+
